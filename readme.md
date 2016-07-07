@@ -4,7 +4,7 @@ BookMarker is simple app made in Laraval 5.2 framework using SQLite that can be 
 
 ## Why ?
 
-Simple, because it was hard for me to manage my bookmarks in browser.
+Simple, because it was hard for me to manage my bookmarks in browser and I didn't want to use any online service either.
 
 ## Screenshot
 
