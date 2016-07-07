@@ -4,7 +4,6 @@
 /public/storage
 Homestead.yaml
 Homestead.json
-.env
 /my_export.json
 /.dropbox
 /NOTE ON VIRTUAL HOST.txt
