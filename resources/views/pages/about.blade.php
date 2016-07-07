@@ -67,11 +67,15 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="well">
                 <p>
-                    BookMarker is simple app made in Laraval framework that can be used to bookmark important
-                    pages from the web to read them later. This is useful when you want to do research about
-                    some topic and organize page links according to category/folder. Pages can be bookmarked
-                    either manually via Admin interface or through Chrome browser extension.
+                    BookMarker is simple app made in Laraval 5.2 framework using SQLite that can be used to bookmark
+                    important pages from the web to read them later. This is useful when you want to do research
+                    about some topic and organize page links according to category/folder. Another good option
+                    is that bookmarked pages can be annotated with highlights and comments. Pages can be
+                    bookmarked either manually via Admin interface or through provided Chrome browser
+                    extension.
                 </p>
+                <h2>Why</h2>
+                <p>Because it is never easy to manage lots of bookmarks in the browser.</p>
             </div>
 
             <h2>Screenshots</h2>

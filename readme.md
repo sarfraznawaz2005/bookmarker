@@ -23,6 +23,8 @@ Simple, because it was hard for me to manage my bookmarks in browser and I didn'
 
 Default Admin Login Details: `admin@admin.com/admin123`
 
+**Note:** You might witness CSS/Javascript files not loading if you try to access app like `http://localhost/bookmarker/public` so create a virtual host pointing to the app like `http://bookmarker.dev`.
+
 ## License
 
 The BookMarker is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
