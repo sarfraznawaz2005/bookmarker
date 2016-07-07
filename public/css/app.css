@@ -1,0 +1,153 @@
+#wrapper {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+fieldset {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+legend {
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #ccc;
+    font-size: 18px;
+    font-weight: bold;
+    color: #999;
+    overflow: hidden;
+}
+
+.flat-blue .side-menu .navbar-header {
+    margin-bottom: 2px;
+}
+
+.whitebox {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.whitebox h2 {
+    font-size: 18px;
+    color: #337AB7;
+    margin: 0;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #337AB7;
+}
+
+.tab-content > div {
+    padding: 0;
+}
+
+/* makes select2 responsive */
+.select2 {
+    width: 100% !important;
+}
+
+th {
+    background-color: #eee;
+}
+
+.dataTable td {
+    overflow: hidden; /* this is what fixes the expansion */
+    text-overflow: ellipsis; /* not supported in all browsers, but I accepted the tradeoff */
+    /*white-space: nowrap;*/
+}
+
+.dataTable th:last-child, .dataTable td:last-child {
+    width: 1%;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.fixLongWidthContentTable th:last-child, .fixLongWidthContentTable td:last-child {
+    width: auto;
+    white-space: normal;
+    text-align: left;
+}
+
+.datatable a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.datatable span.dotted {
+    color: gray;
+    border-bottom: 1px dotted gray;
+    padding: 0;
+    margin: 0;
+}
+
+td {
+    vertical-align: baseline !important;
+}
+
+#colors {
+    margin-left: 15px;
+}
+
+#colors .yellow {
+    padding: 10px;
+    background: #ffb400;
+    color: #fff;
+}
+
+#colors .blue {
+    padding: 10px;
+    background: #22A7F0;
+    color: #fff;
+}
+
+#colors .green {
+    padding: 10px;
+    background: #1ABC9C;
+    color: #fff;
+}
+
+.pricing-table .pt-header, .pricing-table .pt-footer {
+    padding: 5px;
+}
+
+.pricing-table .pt-body {
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: 3px;
+}
+
+.trsuccess {
+    color: #3c763d;
+    background-color: #dff0d8 !important;
+}
+
+a {
+    outline: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #bbb;
+}
+
+td, th {
+    border-top: 1px solid #ddd;
+    padding: 4px 8px;
+}
+
+@media screen and (max-width: 640px) {
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+.navbar .navbar-nav > li, .flat-blue .navbar.navbar-default .navbar-nav > li {
+    border-left: 1px solid #eee;
+}
+
+.side-menu .navbar.navbar-default .navbar-nav > li {
+    border-left: none;
+}

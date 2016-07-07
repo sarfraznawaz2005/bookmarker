@@ -1,0 +1,141 @@
+#annotator__header_elements_container * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    outline: none;
+}
+
+#page-content, #page-content body {
+    margin-top: 40px !important;
+}
+
+#annotator__header_elements_container a {
+    text-decoration: none;
+}
+
+#annotator__header_elements_container .clear {
+    clear: both;
+}
+
+#annotator__header_elements_container .left {
+    float: left;
+}
+
+#annotator__header_elements_container .right {
+    float: right;
+}
+
+#annotator__header_elements_container .center {
+    margin: 0 10px 0 0;
+}
+
+#annotator__header_elements_container .title {
+    padding: 0 15px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#annotator__header_elements_container .title strong {
+    padding: 0 15px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+#annotator__header_elements_container .title strong span {
+    background: #fff;
+    color: #000;
+    padding: 5px;
+    border: 1px solid #000;
+    font-size: 14px;
+}
+
+#annotator__header_elements_container .header {
+    text-align: center;
+    position: fixed;
+    background: #eee;
+    top: 0;
+    left:0;
+    z-index: 999999999999999999999999;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+
+    -moz-box-shadow: 0 0 20px #000;
+    -webkit-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+}
+
+#annotator__header_elements_container a.link {
+    background: #22A7F0;
+    color: #FFF;
+    padding: 0 15px;
+    margin: 0;
+    line-height: 40px;
+    float: left;
+    font-weight: bold;
+}
+
+#annotator__header_elements_container a.link:hover {
+    background: #1b7fb5;
+}
+
+#annotator__header_elements_container a.url:hover {
+    background: none !important;
+}
+
+#page-content {
+    margin-top: 40px;
+}
+
+/* for bootstrap nav because they stick on top - this will show them after our header */
+#page-content .navbar {
+    margin-top: 40px !important;
+}
+
+#annotator__header_elements_container a.button {
+    background: #E74C3C;
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    left: -1px;
+    padding: 0 15px 0 10px;
+    margin: 0;
+    line-height: 40px;
+    float: left;
+}
+
+#annotator__header_elements_container form {
+    display: inline;
+}
+
+#annotator__header_elements_container a.button:hover {
+    background: #C0392B;
+}
+
+.header-cont {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.header {
+    height: 50px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    width: 960px;
+    margin: 0 auto;
+}
+
+/* for button end */

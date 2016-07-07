@@ -1,0 +1,25 @@
+{
+    "name" : "Bookmarker",
+    "version" : "1.0",
+    "manifest_version" : 2,
+    "description" : "BookMarker is simple app made in Laraval framework that can be used to bookmark important pages from the web to read them later.",
+    "icons" : {
+        "16" : "img/icon.png",
+        "48" : "img/48.png",
+        "128" : "img/128.png"
+    },
+    "homepage_url" : "https://codeinphp.github.io/",
+    "background":{
+        "scripts":["js/jquery.js","background.js"]
+    },
+    "permissions" : [
+        "tabs",
+        "notifications",
+        "<all_urls>"
+    ],
+    "browser_action" : {
+        "default_icon" : "img/icon.png",
+        "default_title" : "Bookmark Page",
+        "default_popup" : "popup.html"
+    }
+}

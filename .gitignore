@@ -1,0 +1,12 @@
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+/my_export.json
+/.dropbox
+/NOTE ON VIRTUAL HOST.txt
+/optimize.sh
+/composer.lock
+/PUSH.SH
