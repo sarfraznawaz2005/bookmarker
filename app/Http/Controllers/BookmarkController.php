@@ -359,10 +359,16 @@ class BookmarkController extends Controller
      */
     public function getContentUsingBaseTag(Bookmark $bookmark, $mainContentOnly = false)
     {
+        $contents = '';
         $parse = Uri\parse($bookmark->url);
         $baseDomain = $parse['scheme'] . '://' . $parse['host'];
 
-        $contents = @file_get_contents($bookmark->url);
+        try {
+            $contents = file_get_contents($bookmark->url);
+        } catch (\ErrorException $e) {
+            echo sprintf("<h3 style='margin:100px auto; width: 800px; background:lightcoral; color:#000; padding: 10px;'>%s</h3>",
+                $e->getMessage());
+        }
 
         if ($contents) {
 
