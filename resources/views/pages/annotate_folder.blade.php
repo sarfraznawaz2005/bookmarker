@@ -49,7 +49,7 @@
         <div class="center title" align="center">
             <strong>
                 <span>{{$bookmark->folder->name}}</span>
-                <a class="url" target="_blank" href="{{$bookmark->url}}">{{str_limit($bookmark->title, 100)}}</a>
+                <a class="url" target="_blank" href="{{$bookmark->url}}">{{str_limit($bookmark->title, 80)}}</a>
             </strong>
         </div>
 
