@@ -373,8 +373,8 @@ class BookmarkController extends Controller
         if ($contents) {
 
             if ($mainContentOnly) {
-                $extractor = new ContentExtractor();
-                $contents = $extractor->extract($contents);
+                //$extractor = new ContentExtractor();
+                //$contents = $extractor->extract($contents);
             }
 
             libxml_use_internal_errors(true);
