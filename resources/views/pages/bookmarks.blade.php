@@ -67,6 +67,9 @@
                         @endforeach
                         </tbody>
                     </table>
+
+                    {{ $bookmarks->links() }}
+
                 </div>
             </div>
 

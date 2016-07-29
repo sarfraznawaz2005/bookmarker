@@ -24,7 +24,7 @@ class UserController extends Controller
 
         $title = 'Users';
 
-        $users = $user->whereNotIn('id', [auth()->user()->id])->get();
+        $users = $user->whereNotIn('id', [auth()->user()->id])->paginate(10);
 
         return view('pages.users', compact('title', 'users'));
     }

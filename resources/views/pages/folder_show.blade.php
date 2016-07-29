@@ -36,7 +36,7 @@
             {{-- set bookmarks sort diretion to descending --}}
             <?php \App\Models\Bookmark::$orderDirection = 'DESC'?>
 
-            @foreach($folder->bookmarks as $bookmark)
+            @foreach($bookmarks as $bookmark)
                 <tr class="<?=$bookmark->isread == 1 ? 'trsuccess' : ''?>">
                     <td><a @if(strlen($bookmark->title) > 35) rel="popover" data-placement="top"
                            data-content="{{$bookmark->title}}" data-container="body" @endif target="_blank"
@@ -54,6 +54,9 @@
             @endforeach
             </tbody>
         </table>
+
+        {{ $bookmarks->links() }}
+
     </div>
 
 @endsection

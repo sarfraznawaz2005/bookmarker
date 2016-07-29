@@ -84,10 +84,10 @@ $(function () {
     // jQuery datatable for tables
     $('.datatable').DataTable({
         "dom": '<"top"fl<"clear">>rt<"bottom"ip<"clear">>',
-        "pageLength": 10,
+        "bPaginate": false,
+        "bInfo": false,
         "responsive": true,
-        // disable initial sort
-        "aaSorting": []
+        "aaSorting": [] // disable initial sort
     });
 
     $('.pulsate').pulsate();

@@ -44,6 +44,9 @@
                         @endforeach
                         </tbody>
                     </table>
+
+                    {{ $folders->links() }}
+
                 </div>
 
             </div>

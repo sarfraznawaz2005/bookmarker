@@ -28,7 +28,7 @@ class BookmarkController extends Controller
         $folders = auth()->user()->folders;
 
         // bookmarks of user
-        $bookmarks = auth()->user()->bookmarks()->with('folder')->get();
+        $bookmarks = auth()->user()->bookmarks()->with('folder')->paginate(10);
 
         return view('pages.bookmarks', compact('title', 'folders', 'bookmarks'));
     }

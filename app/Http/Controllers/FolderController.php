@@ -20,7 +20,7 @@ class FolderController extends Controller
     {
         $title = 'Folders';
 
-        $folders = auth()->user()->folders()->with('bookmarks')->get();
+        $folders = auth()->user()->folders()->with('bookmarks')->paginate(10);
 
         return view('pages.folders', compact('title', 'folders'));
     }
@@ -58,6 +58,9 @@ class FolderController extends Controller
     {
         $folder = $this->getUserFolder($id, $folder);
 
+        // bookmarks of the folder
+        $bookmarks = $folder->bookmarks()->paginate(10);
+
         if (!$folder) {
             abort(404);
         }
@@ -73,7 +76,7 @@ class FolderController extends Controller
             ->limit(1)
             ->first();
 
-        return view('pages.folder_show', compact('title', 'folder', 'bookmark'));
+        return view('pages.folder_show', compact('title', 'folder', 'bookmark', 'bookmarks'));
     }
 
     /**
