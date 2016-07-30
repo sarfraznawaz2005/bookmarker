@@ -325,7 +325,7 @@ class BookmarkController extends Controller
 
         //echo $this->extractArticle($bookmark);
 
-        echo $this->getContentUsingBaseTag($bookmark, false);
+        echo $this->getContentUsingBaseTag($bookmark);
     }
 
     /**
@@ -354,28 +354,22 @@ class BookmarkController extends Controller
 
     /**
      * @param Bookmark $bookmark
-     * @param bool $mainContentOnly
      * @return string
      */
-    public function getContentUsingBaseTag(Bookmark $bookmark, $mainContentOnly = false)
+    public function getContentUsingBaseTag(Bookmark $bookmark)
     {
         $contents = '';
         $parse = Uri\parse($bookmark->url);
         $baseDomain = $parse['scheme'] . '://' . $parse['host'];
 
         try {
-            $contents = file_get_contents($bookmark->url);
+            $contents = $this->getContents($bookmark->url);
         } catch (\ErrorException $e) {
             echo sprintf("<h3 style='margin:100px auto; width: 800px; background:lightcoral; color:#000; padding: 10px;'>%s</h3>",
                 $e->getMessage());
         }
 
         if ($contents) {
-
-            if ($mainContentOnly) {
-                //$extractor = new ContentExtractor();
-                //$contents = $extractor->extract($contents);
-            }
 
             libxml_use_internal_errors(true);
 
@@ -384,6 +378,10 @@ class BookmarkController extends Controller
             $dom->strictErrorChecking = false;
             $dom->loadHTML($contents);
 
+            // create new <base> tag
+            $baseTag = $dom->createElement('base');
+            $baseTag->setAttribute('href', $baseDomain);
+
             // find <head> tag
             $headTagList = $dom->getElementsByTagName('head');
             $headTag = $headTagList->item(0);
@@ -391,16 +389,9 @@ class BookmarkController extends Controller
             // find first child of head tag to later use in insertion
             $headHasChildren = $headTag->hasChildNodes();
 
-            if ($headHasChildren) {
-                $headTagFirstChild = $headTag->firstChild;
-            }
-
-            // create new <base> tag
-            $baseTag = $dom->createElement('base');
-            $baseTag->setAttribute('href', $baseDomain);
-
             // insert new base tag as first child to head tag
             if ($headHasChildren) {
+                $headTagFirstChild = $headTag->firstChild;
                 $headTag->insertBefore($baseTag, $headTagFirstChild);
             } else {
                 $headTag->appendChild($baseTag);
@@ -525,5 +516,27 @@ class BookmarkController extends Controller
         } else {
             return '';
         }
+    }
+
+    protected function getContents($url)
+    {
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_REFERER, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, "{$_SERVER['HTTP_USER_AGENT']}");
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        if (false === $result) {
+            return file_get_contents($url);
+        }
+
+        return $result;
     }
 }
