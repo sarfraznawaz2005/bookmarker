@@ -83,7 +83,7 @@ $(function () {
 
     // jQuery datatable for tables
     $('.datatable').DataTable({
-        "dom": '<"top"fl<"clear">>rt<"bottom"ip<"clear">>',
+        "dom": '<"top"l<"clear">>rt<"bottom"ip<"clear">>',
         "bPaginate": false,
         "bInfo": false,
         "responsive": true,

@@ -1,4 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-top">
+
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-expand-toggle">
@@ -16,21 +17,35 @@
             <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
                 <i class="fa fa-times icon"></i>
             </button>
-
-            <li style="margin-top: 22px; margin-right: 5px; border:none;">
-                <span style="padding: 10px;" class="alert-info"><i class="fa fa-book"></i> Read: <strong>{{readPercentage()}} ({{readPagesStats()}})</strong></span>
+            <li style="border: none;">
+                <form method="get" action="{{ url('/search') }}" class="navbar-text form-inline" style="height: 18px; margin-top: 9px;">
+                    <input name="keyword" style="width: 150px; border-right:none;" type="text" class="form-control" placeholder="Search Bookmarks">
+                    <button type="submit" style="margin-left: -5px;" class="btn btn-info" href="#"><i class="glyphicon glyphicon-search"></i></button>
+                    {!! csrf_field() !!}
+                </form>
             </li>
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    <i class="fa fa-user"></i> {{ Auth::user()->name }}
-                    <span class="caret"></span>
+            <li>
+                <a style="font-size: 16px; padding:0 12px;">
+                    <strong class="text-primary"><i class="fa fa-book text-primary"></i> Read: {{readPercentage()}} ({{readPagesStats()}})</strong>
                 </a>
-
+            </li>
+            <li class="dropdown profile">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
                 <ul class="dropdown-menu animated fadeInDown">
-                    <li><a href="{{ url('/setting') }}"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
-                    <li class="divider"></li>
-                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                    <li>
+                        <div class="profile-info">
+                            <h4 class="username">{{ Auth::user()->name }}</h4>
+                            <p>{{ Auth::user()->email }}</p>
+                            <div class="btn-group margin-bottom-2x" role="group">
+                                <a class="btn btn-default" href="{{ url('/setting') }}"><i class="fa fa-gear fa-fw"></i>
+                                    Setting</a>
+                                <a class="btn btn-default" href="{{ url('/logout') }}"><i
+                                            class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </li>
         </ul>

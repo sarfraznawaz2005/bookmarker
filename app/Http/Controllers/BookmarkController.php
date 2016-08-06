@@ -34,6 +34,31 @@ class BookmarkController extends Controller
     }
 
     /**
+     * Searches the bookmark.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $title = 'Search Results';
+
+        // folders of users
+        $folders = auth()->user()->folders;
+
+        // bookmarks of user
+        $bookmarks = auth()->user()
+            ->bookmarks()
+            ->where('url', 'LIKE', '%' . $request->get('keyword') . '%')
+            ->orWhere('title', 'LIKE', '%' . $request->get('keyword') . '%')
+            ->orWhere('comments', 'LIKE', '%' . $request->get('keyword') . '%')
+            ->with('folder')
+            ->paginate(10);
+
+        return view('pages.bookmarks', compact('title', 'folders', 'bookmarks'));
+    }
+
+    /**
      * Store a newly created bookmark in storage.
      *
      * @param  \Illuminate\Http\Request $request

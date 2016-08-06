@@ -56,6 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/load_page/{id}', 'BookmarkController@loadPage');
     Route::post('/save_page', 'BookmarkController@savePage');
     Route::get('/get_title', 'BookmarkController@getTitle');
+    Route::get('/search', 'BookmarkController@search');
 
     // chrome extension
     Route::get('/chrome', 'ChromeExtension@index');
