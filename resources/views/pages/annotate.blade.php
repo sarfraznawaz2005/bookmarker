@@ -23,7 +23,7 @@
                 {{ method_field('DELETE') }}
 
                 <a href="#" id="delete_button" class="button center">
-                    <i class="glyphicon glyphicon-trash"></i> Delete
+                    <i class="glyphicon glyphicon-trash"></i>
                 </a>
             </form>
         </div>
@@ -42,6 +42,12 @@
                 </a>
             </div>
         @endif
+
+        <div class="right">
+            <a class="link" title="Set Read Status" href="{{url('/')}}/read_status/{{$bookmark->id}}">
+                <?=$bookmark->isread == 1 ? 'Mark Unread' : 'Mark Read'?> <i class="glyphicon <?=$bookmark->isread == 1 ? 'glyphicon-star' : 'glyphicon-ok'?>"></i>
+            </a>
+        </div>
 
         <div class="right title"><i class="fa fa-book"></i> Read: {{readPercentage()}} {{$count}}</div>
 
