@@ -308,6 +308,7 @@ class BookmarkController extends Controller
 
         // for count
         $total = $bookmark->folder->bookmarks()->count();
+        $readFromFolderCount = $bookmark->folder->bookmarks()->where('isread', '1')->count();
 
         $currentCount = $bookmarkModel
             ->where('user_id', auth()->user()->id)
@@ -316,8 +317,10 @@ class BookmarkController extends Controller
             ->count();
 
         $count = '(' . ($currentCount + 1) . '/' . $total . ') ';
+        @$readPercentage = number_format(($readFromFolderCount * 100) / $total, 2) . '%';
 
-        return view('pages.annotate_folder', compact('bookmark', 'prevBookmark', 'nextBookmark', 'id', 'count'));
+        return view('pages.annotate_folder',
+            compact('bookmark', 'prevBookmark', 'nextBookmark', 'id', 'count', 'readPercentage'));
     }
 
     /**

@@ -50,7 +50,7 @@
             </a>
         </div>
 
-        <div class="right title"><i class="fa fa-book"></i> Read: {{readPercentage()}} {{$count}}</div>
+        <div class="right title"><i class="fa fa-book"></i> Read: {{$readPercentage}} {{$count}}</div>
 
         <div class="center title" align="center">
             <strong>
