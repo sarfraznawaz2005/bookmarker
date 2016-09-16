@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3592804477">
+  <component name="DataSourceManagerImpl" format="xml" hash="1153465628">
     <data-source source="LOCAL" name="WebNote Database" uuid="987ab9a3-e592-49a3-a4be-dc3e5f27ee7e">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>

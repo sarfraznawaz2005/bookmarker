@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="WebNote Database" uuid="987ab9a3-e592-49a3-a4be-dc3e5f27ee7e">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+    <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="annotations" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="page_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="text" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="quote" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="ranges" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="annotations_page_id_index" unique="true" columns="page_id"/>
+      <index name="annotations_id_index" unique="true" columns="id"/>
+    </table>
+    <table name="bookmarks" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="TINYINT(1)" precision="0" scale="-1" nullable="false" jdbcType="4" def="JzAn"/>
+      <column name="url" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="comments" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="folder_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="isread" sqlType="TINYINT(1)" precision="0" scale="-1" nullable="false" jdbcType="4" def="JzAn"/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="bookmarks_folder_id_index" unique="true" columns="folder_id"/>
+      <index name="bookmarks_user_id_index" unique="true" columns="user_id"/>
+    </table>
+    <table name="folders" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="folders_name_user_id_unique" unique="true" columns="name,user_id"/>
+      <index name="folders_name_index" unique="true" columns="name"/>
+      <index name="folders_user_id_index" unique="true" columns="user_id"/>
+    </table>
+    <table name="migrations" schema="" catalog="" type="TABLE">
+      <column name="migration" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="password_resets" schema="" catalog="" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="token" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <index name="password_resets_token_index" unique="true" columns="token"/>
+      <index name="password_resets_email_index" unique="true" columns="email"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="sqlite_stat1" schema="" catalog="" type="TABLE">
+      <column name="tbl" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="idx" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="stat" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="sqlite_stat4" schema="" catalog="" type="TABLE">
+      <column name="tbl" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="idx" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="neq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="nlt" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="ndlt" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="sample" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="users" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="remember_token" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="updated_at" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="isadmin" sqlType="TINYINT(1)" precision="0" scale="-1" nullable="false" jdbcType="4" def="JzAn"/>
+      <primary-key columns="id"/>
+      <index name="users_email_unique" unique="true" columns="email"/>
+    </table>
   </data-source>
 </component>

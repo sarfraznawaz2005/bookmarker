@@ -18,6 +18,7 @@ a {
 
 #annotator__header_elements_container a {
     text-decoration: none;
+    z-index: 999999999999999999999999;
 }
 
 #annotator__header_elements_container .clear {
@@ -26,10 +27,12 @@ a {
 
 #annotator__header_elements_container .left {
     float: left;
+    z-index: 999999999999999999999999;
 }
 
 #annotator__header_elements_container .right {
     float: right;
+    z-index: 999999999999999999999999;
 }
 
 #annotator__header_elements_container .center {

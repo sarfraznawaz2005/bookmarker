@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run-script',
+1 verbose cli   'prod' ]
+2 info using npm@3.3.12
+3 info using node@v5.3.0
+4 verbose run-script [ 'preprod', 'prod', 'postprod' ]
+5 info lifecycle @~preprod: @
+6 silly lifecycle @~preprod: no script for preprod, continuing
+7 info lifecycle @~prod: @
+8 verbose lifecycle @~prod: unsafe-perm in lifecycle true
+9 verbose lifecycle @~prod: PATH: D:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;E:\Dropbox\www\bookmarker\node_modules\.bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\TortoiseGit\bin;D:\Program Files\nodejs\;D:\laragon\bin\php\php-5.6.16;C:\ProgramData\ComposerSetup\bin;c:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Live\Shared;d:\Program Files\FERRO Software\FtpUse;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Loyal\AppData\Roaming\npm;C:\Users\Loyal\AppData\Local\atom\bin;d:\Program Files\Bandizip\7z;
+10 verbose lifecycle @~prod: CWD: E:\Dropbox\www\bookmarker
+11 silly lifecycle @~prod: Args: [ '/d /s /c', 'gulp --production' ]
+12 silly lifecycle @~prod: Returned: code: 1  signal: null
+13 info lifecycle @~prod: Failed to exec prod script
+14 verbose stack Error: @ prod: `gulp --production`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (D:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:232:16)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at EventEmitter.emit (events.js:172:7)
+14 verbose stack     at ChildProcess.<anonymous> (D:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at ChildProcess.emit (events.js:172:7)
+14 verbose stack     at maybeClose (internal/child_process.js:818:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid @
+16 verbose cwd E:\Dropbox\www\bookmarker
+17 error Windows_NT 6.1.7600
+18 error argv "D:\\Program Files\\nodejs\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run-script" "prod"
+19 error node v5.3.0
+20 error npm  v3.3.12
+21 error code ELIFECYCLE
+22 error @ prod: `gulp --production`
+22 error Exit status 1
+23 error Failed at the @ prod script 'gulp --production'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the  package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     gulp --production
+23 error You can get their info via:
+23 error     npm owner ls
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
